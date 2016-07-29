@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>forms</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Flight Management System</h1>
+        <br/>
+        <h2>Check your Flight Status</h2>
+        <form method="post" action="{{ url_for('fs') }}">
+          <label for="airname">Airline name:</label>
+          <input type="text" name="airname" /><br />
+          
+          <!--<label for="depdate">Departure Date:</label>-->
+          <!--<input type="text" name="depdate" /><br />-->
+          
+          <!--<label for="deploc">Departure Airport:</label>-->
+          <!--<input type="text" name="deploc" /><br />-->
+          
+          <!--<label for="arrloc">Arrival Airport:</label>-->
+          <!--<input type="text" name="arrloc" /><br />-->
+          
+          <input type="submit" value="Check" />
+    </body>
+</html>

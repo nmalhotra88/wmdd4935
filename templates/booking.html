@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Booking Form</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+<body>
+
+<h1>Flight Management System</h1>
+<form method="post" action="{{ url_for('move') }}">
+    
+    <label for="yourname"><span id="ping">Name: </span></label>
+    <input type="text" name="yourname">
+    <br/>
+    
+    <label for="age">Age: </label>
+    <input type="numeric" name="age">
+    <br/>
+    
+    <label for="gender">Gender: </label>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female"> Female
+    <br/>
+    
+    <label for="flight_name">Flight Name: </label>
+    <input type="text" name="flightname"/>
+    <br/>
+   
+    <label for="fligtdate">Date: </label>
+    <input type="date" name="flightdate">
+    <br/>
+     
+    <label for="fromloc">Departure Location: </label>
+    <input type="text" name="fromloc">
+    <br/>
+    
+    <label for="toloc">Arrival Location: </label>
+    <input type="text" name="toloc">
+    <br/>
+     
+    
+     
+
+  <input type="Submit" value="Register">
+  
+</form>
+
+</body>
+</html>

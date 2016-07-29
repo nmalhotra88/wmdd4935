@@ -1,0 +1,22 @@
+<!-- <html>-->
+<!--        <head>-->
+<!--        <title>form</title>-->
+<!--        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">-->
+<!--    </head>-->
+<!--    <body>-->
+<!--        <h1>POST request with Flask</h1>-->
+<!--        <p>your name is <strong>{{ name }}</strong> and your email addres is {{ email }}</p>-->
+<!--    </body>-->
+<!--</html>-->
+
+ <html>
+        <head>
+        <title>Registered</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Thank you! <strong>{{ name }}</strong>..</h1>
+        <br/>
+        <h1>Now click <a href="{{ url_for('booking') }}">here</a> to book for your flight.</h1>
+    </body>
+</html>

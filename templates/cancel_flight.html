@@ -1,0 +1,20 @@
+ <html>
+        <head>
+        <title>Registered</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+       
+        <h2>Your Flight status details are:</h2>
+        <br/>
+        <h3>Flight Name: <strong>{{ flightname}}</strong></h3>
+        <br/><br/>
+        <h3>Status: <strong>{{ flightdate }}</strong></h3>
+        <br/><br/>
+        <h3>Departure Location: <strong>{{ fromloc }}</strong></h3>
+        <br/><br/>
+        <h3>Arrival Location: <strong>{{ toloc }}</strong></h3>
+        <br/><br/>
+        <input type="submit" value="Cancel" />
+    </body>
+</html>
