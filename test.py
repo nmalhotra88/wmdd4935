@@ -35,6 +35,8 @@
 from flask import (Flask, render_template, redirect,
                    url_for, request, make_response)
 
+from tinydb.operations import delete
+
 from tinydb import TinyDB, where
 
 db = TinyDB('name_email.json')
@@ -66,23 +68,29 @@ def fs():
         status = items.get('status')
         deploc = items.get('deploc')
         arrloc = items.get('arrloc')
-        flight_name = items.get('airname')
-    return render_template('checked_status.html', airname=flight_name, status=status, deploc=deploc, arrloc=arrloc )
+        flightname = items.get('airname')
+    return render_template('checked_status.html', airname=flightname, status=status, deploc=deploc, arrloc=arrloc )
 
 
+
+@app.route('/cancelled_msg', methods=['POST'])
+def cs():
+    flightname=request.form['flightname']
+    dbase.update(delete(where('flightname') == flightname))
+    return render_template('cancelled_msg.html') 
 
 @app.route('/cancel_flight', methods=['POST'])
 def gf():
     flightname=request.form['flightname']
     
-    flight = datab.search(where('flightname') == flightname)
+    event = dbase.search(where('flightname') == flightname)
     
-    for items in flight:
+    for items in event:
         flightdate = items.get('flightdate')
         fromloc = items.get('fromloc')
         toloc = items.get('toloc')
-        flight_name = items.get('flightname')
-    return render_template('cancel_flight.html', flightname=flight_name, flightdate=flightdate, fromloc=fromloc, toloc=toloc )
+        flightname =  items.get('flightname')
+    return render_template('cancel_flight.html', flightname=flightname, flightdate=flightdate, fromloc=fromloc, toloc=toloc )
 
 
 @app.route('/booked', methods=['POST'])
@@ -90,21 +98,21 @@ def move():
     name=request.form['yourname']
     age=request.form['age']
     gender=request.form['gender']
-    flight_name=request.form['flightname']
+    flightname=request.form['flightname']
     flightdate=request.form['flightdate']
     fromloc=request.form['fromloc']
     toloc=request.form['toloc']
     
-    dbase.insert({'name': name, 'flight_name': flight_name, 'age':age, 'gender':gender, 'flightdate': flightdate, 'fromloc': fromloc, 'toloc': toloc})
+    dbase.insert({'name': name, 'flightname': flightname, 'age':age, 'gender':gender, 'flightdate': flightdate, 'fromloc': fromloc, 'toloc': toloc})
     
-    return render_template('booked.html', name=name, age=age, gender=gender, flight_name=flight_name, flightdate=flightdate, fromloc=fromloc, toloc=toloc)
+    return render_template('booked.html', name=name, age=age, gender=gender, flightname=flightname, flightdate=flightdate, fromloc=fromloc, toloc=toloc)
 
 @app.route('/flight_status')
 def flight_status():
     return render_template('flight_status.html')
 
 @app.route('/get_flight')
-def flight_status():
+def get_flight():
     return render_template('get_flight.html')
     
 @app.route('/db')

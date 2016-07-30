@@ -1,4 +1,4 @@
 [{flightstatus1: ok},
  {flightstatus2: not ok}
- {flight453: ok}
+ {flight453: ok
 ]

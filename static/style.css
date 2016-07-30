@@ -1,16 +1,70 @@
 body {
     font-family: sans-serif;
     color: #888;
+    background-color: pink;
     font-style: normal;
-    font-size: 14px;
-    line-height: 22px;
-    margin: 25px;
+    /*font-size: 14px;*/
+    /*line-height: 22px;*/
+    /*margin: 25px;*/
+    /*width: 30%;*/
+    /*max-width: 92%;*/
+    /*margin: 0 auto;*/
+    /*padding: 15% 0;*/
+}
+
+.fine{
+    height: 200px;
+    width: 200px;
+}
+
+.msg{
+   margin: -300px 30%;
+}
+
+.booked{
+   margin: -35% 30%;
+}
+
+img{
+    height: 500px;
+    width: 500px;
+}
+
+
+
+.dig{
+    color: #198;
+    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 50px;
+    text-transform: capitalize;   
+}
+
+header{
+    /*margin: 0 auto;*/
+    padding:10% 12%;
+    max-width: 100%;
+    /*height: 45%;*/
+}
+
+.booking{
+    padding: 0% 40%;
+    width: 30%;
+}
+.main{
+    width: 30%;
+    /*max-width: 92%;*/
+    margin: -40% 6%;
+    padding: 0 45%;
 }
 
 h1 {
     color: #198;
+    font-weight: bold;
     margin: 0;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 50px;
     text-transform: capitalize;

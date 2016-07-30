@@ -4,31 +4,24 @@
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1>Thank you <strong>{{ name }}</strong>, You are successfully booked your flight.</h1>
+        <header><img class="fine" src="static/logo.png"></header>
+         <div class="booked"><h1>Thank you <strong>{{ name }}</strong>, You are successfully booked your flight.</h1>
         <br/><br/>
         <h2>Your Flight booking details are:</h2>
-        <br/>
-        <h3>Flight Name: <strong>{{ flight_name }}</strong></h3>
-        <br/><br/>
+        <h3>Flight Name: <strong>{{ flightname }}</strong></h3>
         <h3>Age: <strong>{{ age }}</strong></h3>
-        <br/><br/>
         <h3>Gender: <strong>{{ gender }}</strong></h3>
-        <br/><br/>
         <h3>Date: <strong>{{ flightdate }}</strong></h3>
-        <br/><br/>
         <h3>Departure Location: <strong>{{ fromloc }}</strong></h3>
-        <br/><br/>
         <h3>Arrival Location: <strong>{{ toloc }}</strong></h3>
-        <br/><br/>
+        <br/>
         
         <!--<form>-->
         <!--<button>Flight Status</button>-->
         <!--</form>-->
-        <h1>Click <a href="{{ url_for('flight_status') }}">here</a> to check your flight status.</h1>
-        <br/>
-        <h1>Or</h1>
-        <br/>
-        <h1>Click <a href="{{ url_for('get_flight') }}">here</a> to cancel your flight.</h1>
-        
+        <h1 class="dig">Click <a href="{{ url_for('flight_status') }}">here</a> to check your flight status.</h1>
+        <h3 class="dig">Or</h3>
+        <h1 class="dig">Click <a href="{{ url_for('get_flight') }}">here</a> to cancel your flight.</h1>
+        </div>
     </body>
 </html>
